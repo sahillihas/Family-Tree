@@ -28,7 +28,3 @@ Trace back generations and understand your family’s lineage over time.
 ### Relationship Mapping  
 Automatically identify how one person is related to another within the tree.
 
-## Purpose
-
-The goal of this project is to create a dynamic, shared space where families can document their history, uncover connections, and preserve their heritage for future generations.
-
