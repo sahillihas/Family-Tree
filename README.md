@@ -29,3 +29,8 @@ Trace back generations and understand your family’s lineage over time.
 Automatically identify how one person is related to another within the tree.
 
 -----
+
+
+## Structure
+- `frontend/` — React app (UI, graph rendering)
+- `backend/` — Express API (auth, data, relationships)
