@@ -26,10 +26,7 @@ Manage visibility and editing permissions for your family information, keeping s
 Trace back generations and understand your family’s lineage over time.
 
 ### Relationship Mapping  
-Automatically identify how one person is related to another within the tree.
-
------
-
+Automatically identify how one person is related to another within the 
 
 ## Structure
 - `frontend/` — React app (UI, graph rendering)
