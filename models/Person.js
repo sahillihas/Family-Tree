@@ -1,13 +1,45 @@
 const mongoose = require('mongoose');
 
-const PersonSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  gender: { type: String, enum: ['male', 'female', 'other'], required: true },
-  dob: { type: Date },
-  placeOfBirth: { type: String },
-  photo: { type: String },
-  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  privacy: { type: String, enum: ['public', 'private'], default: 'public' },
-}, { timestamps: true });
+const { Schema, model, Types } = mongoose;
 
-module.exports = mongoose.model('Person', PersonSchema);
+const PersonSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'Name is required'],
+      trim: true,
+    },
+    gender: {
+      type: String,
+      enum: ['male', 'female', 'other'],
+      required: [true, 'Gender is required'],
+    },
+    dob: {
+      type: Date,
+    },
+    placeOfBirth: {
+      type: String,
+      trim: true,
+    },
+    photo: {
+      type: String, 
+      trim: true,
+    },
+    createdBy: {
+      type: Types.ObjectId,
+      ref: 'User',
+      required: [true, 'Creator reference is required'],
+    },
+    privacy: {
+      type: String,
+      enum: ['public', 'private'],
+      default: 'public',
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
+
+module.exports = model('Person', PersonSchema);
